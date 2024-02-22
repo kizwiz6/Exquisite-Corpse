@@ -11,51 +11,11 @@
 
         static void BuildACreature(string head, string body, string feet)
         {
-            switch (head)
-            {
-                case "bug":
-                    BugHead();
-                    break;
-                case "monster":
-                    MonsterHead();
-                    break;
-                case "ghost":
-                    GhostHead();
-                    break;
-                default:
-                    Console.WriteLine($"what");
-                    break;
-            }
-            switch (body)
-            {
-                case "bug":
-                    BugBody();
-                    break;
-                case "monster":
-                    MonsterBody();
-                    break;
-                case "ghost":
-                    GhostBody();
-                    break;
-                default:
-                    Console.WriteLine($"what");
-                    break;
-            }
-            switch (feet)
-            {
-                case "bug":
-                    BugFeet();
-                    break;
-                case "monster":
-                    MonsterFeet();
-                    break;
-                case "ghost":
-                    GhostFeet();
-                    break;
-                default:
-                    Console.WriteLine($"what");
-                    break;
-            }
+            int headNum = TranslateToNumber(head);
+            int bodyNum = TranslateToNumber(body);
+            int feetNum = TranslateToNumber(feet);
+
+            SwitchCase(headNum, bodyNum, feetNum);
         }
 
         static void RandomMode()
@@ -80,9 +40,6 @@
                 case 3:
                     GhostHead();
                     break;
-                default:
-                    Console.WriteLine($"what");
-                    break;
             }
             switch (body)
             {
@@ -94,9 +51,6 @@
                     break;
                 case 3:
                     GhostBody();
-                    break;
-                default:
-                    Console.WriteLine($"what");
                     break;
             }
             switch (feet)
@@ -110,9 +64,21 @@
                 case 3:
                     GhostFeet();
                     break;
+            }
+        }
+
+        static int TranslateToNumber(string creature)
+        {
+            switch (creature)
+            {
+                case "bug":
+                    return 1;
+                case "monster":
+                    return 2;
+                case "ghost":
+                    return 3;
                 default:
-                    Console.WriteLine($"what");
-                    break;
+                    return 1;
             }
         }
 
