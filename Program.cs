@@ -56,6 +56,14 @@
             }
         }
 
+        static void RandomMode()
+        {
+            Random randomNumber = new Random();
+            int head = randomNumber.Next(1, 4);
+            int body = randomNumber.Next(1, 4);
+            int feet = randomNumber.Next(1, 4);
+        }
+
         static void GhostHead()
         {
             Console.WriteLine("     ..-..");
