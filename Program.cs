@@ -4,7 +4,63 @@
     {
         static void Main(string[] args)
         {
+            BuildACreature("ghost", "monster", "bug");
+        }
 
+        static void BuildACreature(string head, string body, string feet)
+        {
+            switch (head)
+            {
+                case "bug":
+                    BugHead();
+                    break;
+                case "monster":
+                    MonsterHead();
+                    break;
+                case "ghost":
+                    GhostHead();
+                    break;
+                default:
+                    Console.WriteLine($"what");
+                    break;
+            }
+            switch (body)
+            {
+                case "bug":
+                    BugBody();
+                    break;
+                case "monster":
+                    MonsterBody();
+                    break;
+                case "ghost":
+                    GhostBody();
+                    break;
+                default:
+                    Console.WriteLine($"what");
+                    break;
+            }
+            switch (feet)
+            {
+                case "bug":
+                    BugFeet();
+                    break;
+                case "monster":
+                    MonsterFeet();
+                    break;
+                case "ghost":
+                    GhostFeet();
+                    break;
+                default:
+                    Console.WriteLine($"what");
+                    break;
+            }
+        }
+
+        static void GhostHead()
+        {
+            Console.WriteLine("     ..-..");
+            Console.WriteLine("    ( o o )");
+            Console.WriteLine("    |  O  |");
         }
 
         static void GhostBody()
