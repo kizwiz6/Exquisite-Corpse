@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            BuildACreature("ghost", "monster", "bug");
+            //BuildACreature("ghost", "bug", "monster");
+            //SwitchCase(1, 1, 1);
+            RandomMode();
         }
 
         static void BuildACreature(string head, string body, string feet)
@@ -62,6 +64,56 @@
             int head = randomNumber.Next(1, 4);
             int body = randomNumber.Next(1, 4);
             int feet = randomNumber.Next(1, 4);
+            SwitchCase(head, body, feet);
+        }
+
+        static void SwitchCase(int head, int body, int feet)
+        {
+            switch (head)
+            {
+                case 1:
+                    BugHead();
+                    break;
+                case 2:
+                    MonsterHead();
+                    break;
+                case 3:
+                    GhostHead();
+                    break;
+                default:
+                    Console.WriteLine($"what");
+                    break;
+            }
+            switch (body)
+            {
+                case 1:
+                    BugBody();
+                    break;
+                case 2:
+                    MonsterBody();
+                    break;
+                case 3:
+                    GhostBody();
+                    break;
+                default:
+                    Console.WriteLine($"what");
+                    break;
+            }
+            switch (feet)
+            {
+                case 1:
+                    BugFeet();
+                    break;
+                case 2:
+                    MonsterFeet();
+                    break;
+                case 3:
+                    GhostFeet();
+                    break;
+                default:
+                    Console.WriteLine($"what");
+                    break;
+            }
         }
 
         static void GhostHead()
